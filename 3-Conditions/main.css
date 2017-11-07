@@ -1,0 +1,12 @@
+.Age {
+  height: 200px;
+  width: 173px;
+  display: block;
+  background-color: #8DCC2B;
+  font-size: 20px;
+  border-radius: 5%;
+}
+
+.Age h5 {
+  text-align: center;
+}
