@@ -63,11 +63,16 @@
 
     // ----- Remplacer lettres "ae" par "æ"----- //
 
+    $mot1 = "caecotrophie";
+    $mot2 = "chaenichthys";
+    $mot3 = "microsphaera";
+    $mot4 = "sphaerotheca";
+
     function æ($lettre) {
       return str_replace("ae", "æ", $lettre);
     }
 
-    echo æ("caecotrophie, chaenichthys, microsphaera, sphaerotheca");
+    echo æ("$mot1, $mot2, $mot3, $mot4");
     echo "<hr>";
 
     // ----- Remplacer lettres "æ" par "ae"----- //
@@ -76,9 +81,84 @@
       return str_replace("æ", "ae", $lettre);
     }
 
-    echo ae("cæcotrophie, chænichthys, microsphæra, sphærotheca");
+    echo ae(æ("$mot1, $mot2, $mot3, $mot4"));
+    echo "<hr>";
+
+    // ----- Message d'alerte ----- //
+
+    $msgAlerte = "Weichuan, t'es nul !!!";
+    $classCss = "attention";
+
+    function feedback($msgAlerte, $classCss)
+    {
+      return "<div class=$classCss>$msgAlerte.</div>";
+    }
+
+    echo feedback($msgAlerte, $classCss);
+    echo "<hr>";
+
+    // ----- Changer la classe précédente si pas spécifiée (dans le rappel de la fonction dans l'echo)----- //
+
+    $msgAlerte2 = "Kevin est notre sauveur !!";
+    $classCss2 = "attention";
+
+    function feedback2($msgAlerte2, $classCss2 = "info")
+    {
+      return "<div class=$classCss2>$msgAlerte2.</div>";
+    }
+
+    echo feedback2($msgAlerte2);
+    echo "<hr>";
+    echo "<hr>";
+
+    // ----- Générer 1 mot de max 5 lettres aléatoirement ----- //
+
+    function generateur() {
+
+      $lettres = "";
+
+      for ($i=0; $i < 5; $i++) {
+        $lettres .= chr(rand(97, 122));
+      };
+      return $lettres;
+    };
+
+    echo generateur();
+    echo "<hr>";
+
+    // ----- Généger un mot de min 7 lettres et max 15 lettres ----- //
+
+    function generateur2() {
+
+      $lettres2 = "";
+
+      for ($ii=7; $ii < 15; $ii++) {
+        $lettres2 .= chr(rand(97, 122));
+      };
+      return $lettres2;
+    };
+
+    echo generateur2();
     echo "<hr>";
   ?>
 
+  <form action="Fonctions.php">
+    <input type="submit" value="Regénérer vos mots">
+  </form>
+
+  <?php
+
+    echo '<hr>';
+
+    // ----- Convertire une chaine de charactere de MAJUSCULE en minuscule ----- //
+
+    $ToMinuscule = "ARRÊTE DE CRIER JE N'ENTENDS PLUS RIEN!!!";
+
+    echo mb_strtolower($ToMinuscule);
+    echo '<hr>';
+
+    // ----- Calculer le volume d'un cône en fonction du rayon et de la hauteur ----- //
+
+  ?>
 </body>
 </html>
