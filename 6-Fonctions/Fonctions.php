@@ -157,8 +157,15 @@
     echo mb_strtolower($ToMinuscule);
     echo '<hr>';
 
-    // ----- Calculer le volume d'un cône en fonction du rayon et de la hauteur ----- //
+    // -- Calculer le volume d'un cône en fonction d'un rayon de 3cm et d'une hauteur de 10cm -- //
 
+    function volume_dun_cone($rayon, $hauteur) {
+      $volume = $rayon * $rayon * 3.14 * $hauteur *(1/3);
+      return $volume;
+    };
+
+    echo "Le volume d'un cône dont le rayon est de 3 cm et la hauteur est de 10 cm vaut " . volume_dun_cone(10, 3) . " cm<sup>3</sup>";
+    echo "<hr>";
   ?>
 </body>
 </html>
